@@ -15,8 +15,8 @@ shownames=[
 	"So You Think You Can Dance",
 	"Community"]
 
-downloadpath = "/mediacenter/TV/"
-destinationpath = "/home/katie/Desktop/SortedTV/"
+downloadpath = "/pathToOriginal/"
+destinationpath = "/pathToDestination/"
 
 toaddr="xxxxxxxxxxxxxxxxxxxxxxxxx"
 username="xxxxxxxxxxxxxxxxxxxxxxxx"
@@ -57,7 +57,7 @@ def sortvideos():
 					server.ehlo()
 					server.login(username,password)  
 					headers = "\r\n".join(["from: " + username,
-                       			"subject: New video downloaded!",
+                       			"subject: "message",
                        			"to: "+toaddr+,
                        			"mime-version: 1.0",
                        			"content-type: text/html"])
