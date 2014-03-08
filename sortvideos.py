@@ -21,7 +21,7 @@ destinationpath = "/home/katie/Desktop/SortedTV/"
 toaddr="xxxxxxxxxxxxxxxxxxxxxxxxx"
 username="xxxxxxxxxxxxxxxxxxxxxxxx"
 password="xxxxxxxxxx!"
-
+message="xxxxxxxxxxx"
 
 
 for name in shownames:
@@ -50,7 +50,7 @@ def sortvideos():
 						matchcount = matchcount - 1
 				if matchcount == 0:
 					os.rename(downloadpath+f, destinationpath+name+"/"+f)
-					subprocess.Popen(['notify-send', "New show episode downloaded! "+f])
+					subprocess.Popen(['notify-send', message, f])
 					server = smtplib.SMTP('smtp.gmail.com', 587)  
 					server.ehlo()
 					server.starttls()  
@@ -63,7 +63,7 @@ def sortvideos():
                        			"content-type: text/html"])
 
 					content = headers + "\r\n\r\n" + f
-					server.sendmail(username, "adrian.sitterle@gmail.com", content)
+					server.sendmail(username, toaddr, content)
 					
 
 					
