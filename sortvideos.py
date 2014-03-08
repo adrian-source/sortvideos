@@ -58,7 +58,7 @@ def sortvideos():
 					server.login(username,password)  
 					headers = "\r\n".join(["from: " + username,
                        			"subject: "message",
-                       			"to: "+toaddr+,
+                       			"to: "+toaddr,
                        			"mime-version: 1.0",
                        			"content-type: text/html"])
 
